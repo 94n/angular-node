@@ -3,17 +3,17 @@
 var app = require('../..');
 var request = require('supertest');
 
-describe('Thing API:', function() {
+describe('Thing API:', function () {
 
-  describe('GET /api/things', function() {
+  describe('GET /api/things', function () {
     var things;
 
-    beforeEach(function(done) {
+    beforeEach(function (done) {
       request(app)
         .get('/api/things')
         .expect(200)
         .expect('Content-Type', /json/)
-        .end(function(err, res) {
+        .end(function (err, res) {
           if (err) {
             return done(err);
           }
@@ -22,7 +22,7 @@ describe('Thing API:', function() {
         });
     });
 
-    it('should respond with JSON array', function() {
+    it('should respond with JSON array', function () {
       things.should.be.instanceOf(Array);
     });
 

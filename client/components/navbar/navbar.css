@@ -9,23 +9,37 @@
 .svr-styles {
   padding-bottom: 9px;
   padding-top: 8px;
-  }
+}
+
 .svr-styles .svr-logo {
   display: inline-block;
   vertical-align: bottom;
-  margin-right: 5px; }
+  margin-right: 5px;
+}
+
 .svr-styles .svr-logo img {
   height: 44px;
-  width: 44px; }
+  width: 44px;
+}
+
 .svr-styles .svr-logo-text {
-  line-height: 1.1; }
+  line-height: 1.1;
+}
+
 .svr-styles .svr-logo-text, .svr-styles .svr-logo {
-  display: inline-block; }
+  display: inline-block;
+}
+
 .svr-styles .svr-logo-text-top {
   font-weight: 700;
   font-style: normal;
-  font-size: 11px; }
+  font-size: 11px;
+}
+
 .svr-styles .svr-logo-text-bottom {
-  font-size: 21px; }
+  font-size: 21px;
+}
+
 .svr-styles .svr-logo-text-top, .svr-styles .svr-logo-text-bottom {
-  color: #FFFFFF; }
+  color: #FFFFFF;
+}

@@ -5,7 +5,7 @@ module.exports = function (grunt) {
   var localConfig;
   try {
     localConfig = require('./server/config/local.env');
-  } catch(e) {
+  } catch (e) {
     localConfig = {};
   }
 
@@ -310,7 +310,7 @@ module.exports = function (grunt) {
         configPath: '<%= yeoman.server %>/config/environment/shared'
       },
       app: {
-        constants: function() {
+        constants: function () {
           return {
             appConfig: require('./' + grunt.config.get('ngconstant.options.configPath'))
           };
@@ -551,19 +551,17 @@ module.exports = function (grunt) {
     },
 
     injector: {
-      options: {
-
-      },
+      options: {},
       // Inject application script files into index.html (doesn't include bower)
       scripts: {
         options: {
-          transform: function(filePath) {
+          transform: function (filePath) {
             var yoClient = grunt.config.get('yeoman.client');
             filePath = filePath.replace('/' + yoClient + '/', '');
             filePath = filePath.replace('/.tmp/', '');
             return '<script src="' + filePath + '"></script>';
           },
-          sort: function(a, b) {
+          sort: function (a, b) {
             var module = /\.module\.js$/;
             var aMod = module.test(a);
             var bMod = module.test(b);
@@ -575,18 +573,18 @@ module.exports = function (grunt) {
         },
         files: {
           '<%= yeoman.client %>/index.html': [
-               [
-                 '.tmp/{app,components}/**/!(*.spec|*.mock).js',
-                 '!{.tmp,<%= yeoman.client %>}/app/app.js'
-               ]
+            [
+              '.tmp/{app,components}/**/!(*.spec|*.mock).js',
+              '!{.tmp,<%= yeoman.client %>}/app/app.js'
             ]
+          ]
         }
       },
 
       // Inject component css into index.html
       css: {
         options: {
-          transform: function(filePath) {
+          transform: function (filePath) {
             var yoClient = grunt.config.get('yeoman.client');
             filePath = filePath.replace('/' + yoClient + '/', '');
             filePath = filePath.replace('/.tmp/', '');
@@ -616,7 +614,7 @@ module.exports = function (grunt) {
     }, 1500);
   });
 
-  grunt.registerTask('express-keepalive', 'Keep grunt running', function() {
+  grunt.registerTask('express-keepalive', 'Keep grunt running', function () {
     this.async();
   });
 
@@ -658,7 +656,7 @@ module.exports = function (grunt) {
     grunt.task.run(['serve']);
   });
 
-  grunt.registerTask('test', function(target, option) {
+  grunt.registerTask('test', function (target, option) {
     if (target === 'server') {
       return grunt.task.run([
         'env:all',
@@ -666,9 +664,7 @@ module.exports = function (grunt) {
         'mochaTest:unit',
         'mochaTest:integration'
       ]);
-    }
-
-    else if (target === 'client') {
+    } else if (target === 'client') {
       return grunt.task.run([
         'clean:server',
         'env:all',
@@ -679,9 +675,7 @@ module.exports = function (grunt) {
         'wiredep:test',
         'karma'
       ]);
-    }
-
-    else if (target === 'e2e') {
+    } else if (target === 'e2e') {
 
       if (option === 'prod') {
         return grunt.task.run([
@@ -691,9 +685,7 @@ module.exports = function (grunt) {
           'express:prod',
           'protractor'
         ]);
-      }
-
-      else {
+      } else {
         return grunt.task.run([
           'clean:server',
           'env:all',
@@ -707,9 +699,7 @@ module.exports = function (grunt) {
           'protractor'
         ]);
       }
-    }
-
-    else if (target === 'coverage') {
+    } else if (target === 'coverage') {
 
       if (option === 'unit') {
         return grunt.task.run([
@@ -717,23 +707,17 @@ module.exports = function (grunt) {
           'env:test',
           'mocha_istanbul:unit'
         ]);
-      }
-
-      else if (option === 'integration') {
+      } else if (option === 'integration') {
         return grunt.task.run([
           'env:all',
           'env:test',
           'mocha_istanbul:integration'
         ]);
-      }
-
-      else if (option === 'check') {
+      } else if (option === 'check') {
         return grunt.task.run([
           'istanbul_check_coverage'
         ]);
-      }
-
-      else {
+      } else {
         return grunt.task.run([
           'env:all',
           'env:test',
@@ -742,9 +726,7 @@ module.exports = function (grunt) {
         ]);
       }
 
-    }
-
-    else grunt.task.run([
+    } else grunt.task.run([
       'test:server',
       'test:client'
     ]);

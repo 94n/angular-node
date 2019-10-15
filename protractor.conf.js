@@ -50,7 +50,8 @@ var config = {
   // See the full list at https://github.com/jasmine/jasmine-npm
   jasmineNodeOpts: {
     defaultTimeoutInterval: 30000,
-    print: function() {}  // for jasmine-spec-reporter
+    print: function () {
+    }  // for jasmine-spec-reporter
   },
 
   // Prepare environment for tests
@@ -58,7 +59,7 @@ var config = {
     serverConfig: require('./server/config/environment')
   },
 
-  onPrepare: function() {
+  onPrepare: function () {
     require('babel-core/register');
     var SpecReporter = require('jasmine-spec-reporter');
     // add jasmine spec reporter

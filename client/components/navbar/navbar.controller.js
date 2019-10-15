@@ -8,10 +8,11 @@ class NavbarController {
   }];
 
   isCollapsed = true;
+
   //end-non-standard
 
   constructor() {
-    }
+  }
 }
 
 angular.module('svrTestTaskApp')
