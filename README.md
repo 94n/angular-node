@@ -1,4 +1,4 @@
-# svr-test-task
+# angular-node
 
 ## Getting Started
 
