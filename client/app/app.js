@@ -8,7 +8,7 @@ angular.module('svrTestTaskApp', [
   'ui.router',
   'ui.bootstrap'
 ])
-  .config(function($urlRouterProvider, $locationProvider) {
+  .config(function ($urlRouterProvider, $locationProvider) {
     $urlRouterProvider
       .otherwise('/');
 
