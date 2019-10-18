@@ -6,6 +6,20 @@
 'use strict';
 
 // Gets a list of Things
+var request = require('request');
 exports.index = function (req, res) {
   res.json([]);
+  var options = {
+    method: 'GET',
+    url: 'https://smida-dev.test.idoc.com.ua/api/registry/okpoCard',
+    qs: {code: '01130549'}
+  };
+  process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 0;
+  request(options, function (error, response, body) {
+    if (!error && response.statusCode == 200) {
+      console.log(body);
+    } else {
+      console.log(error);
+    }
+  });
 };

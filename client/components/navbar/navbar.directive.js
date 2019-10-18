@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('svrTestTaskApp')
-  .directive('navbar', () = > ({
+  .directive('navbar', () => ({
   templateUrl: 'components/navbar/navbar.html',
   restrict: 'E',
   controller: 'NavbarController',
