@@ -8,7 +8,6 @@
 // Gets a list of Things
 var request = require('request');
 exports.index = function (req, res) {
-  res.json([]);
   var options = {
     method: 'GET',
     url: 'https://smida-dev.test.idoc.com.ua/api/registry/okpoCard',
@@ -16,10 +15,11 @@ exports.index = function (req, res) {
   };
   process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 0;
   request(options, function (error, response, body) {
-    if (!error && response.statusCode == 200) {
-      console.log(body);
+    if (!error && response.statusCode === 200) {
+      res.json(body);
     } else {
       console.log(error);
     }
   });
+
 };
