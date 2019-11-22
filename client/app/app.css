@@ -42,3 +42,30 @@ body {
   overflow: hidden;
 }
 
+.main {
+  height: 100%;
+}
+
+.white {
+  background: white;
+  height: 88%;
+  margin: 20px;
+  padding: 30px 50px 30px 50px;
+}
+
+.content {
+  height: 100%;
+}
+
+.half {
+  float: left;
+  width: 50%;
+}
+
+.link {
+  color: blue;
+}
+
+.kod {
+  color: gray;
+}
