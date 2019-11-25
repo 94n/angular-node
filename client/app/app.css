@@ -69,3 +69,11 @@ body {
 .kod {
   color: gray;
 }
+
+.right {
+  float: right;
+}
+
+.search {
+  width: 256px;
+}
