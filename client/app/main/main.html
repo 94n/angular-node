@@ -7,8 +7,12 @@
       <div class="kod">Код за ЄДРПОУ: 01130549</div>
     </div>
     <div class="half">
-      <input id='profileButton' type="checkbox" checked data-on="Ready" data-off="Not Ready" data-onstyle="success"
-             data-offstyle="danger">
+      <div class="right toggle-container">
+        <div class="toggle-button"/>
+        <div class="toggle-text">
+          Профіль
+        </div>
+      </div>
       <div class='input-group date right' id='datetimepicker1'>
         <input type='text' class="form-control"/>
         <span class="input-group-addon">
@@ -17,6 +21,18 @@
       </div>
       <input class="right search" placeholder="Пошук за ЄДРПОУ та назвою"/>
     </div>
+    <table class="table">
+      <colgroup>
+        <col style="width:30%">
+        <col style="width:35%">
+        <col style="width:35%">
+      </colgroup>
+      <tr>
+        <td></td>
+        <td>Відомості з ЄДР</td>
+        <td>Відомості з СВР</td>
+      </tr>
+    </table>
   </div>
 </div>
 <script type="text/javascript">
@@ -24,6 +40,5 @@
     $('#datetimepicker1').datetimepicker({
       format: 'YYYY-MM-DD'
     });
-    $('#profileButton').bootstrapToggle();
   });
 </script>

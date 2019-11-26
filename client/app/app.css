@@ -42,7 +42,7 @@ body {
   overflow: hidden;
 }
 
-.main {
+.main, .content {
   height: 100%;
 }
 
@@ -51,10 +51,6 @@ body {
   height: 88%;
   margin: 20px;
   padding: 30px 50px 30px 50px;
-}
-
-.content {
-  height: 100%;
 }
 
 .half {
@@ -70,19 +66,37 @@ body {
   color: gray;
 }
 
+.right {
+  float: right;
+  margin: 8px;
+}
+
+.toggle-container, .toggle-button, .date * {
+  border: 1px solid #00b3ee;
+  color: #00b3ee;
+}
+
+.toggle-container {
+  height: 34px;
+  width: 96px;
+}
+
+.toggle-button {
+  float: left;
+  height: 100%;
+  width: 16px;
+}
+
+.toggle-text{
+  margin: 4px 0 0 32px;
+}
+
 .date {
   width: 128px;
 }
 
 .date * {
   background-color: inherit;
-  border-color: #00b3ee;
-  color: #00b3ee;
-}
-
-.right {
-  float: right;
-  margin: 8px;
 }
 
 .date input {
@@ -97,4 +111,12 @@ body {
 .search {
   height: 34px;
   width: 256px;
+}
+
+.table {
+  width: 100%;
+}
+
+.table td {
+  width:
 }
