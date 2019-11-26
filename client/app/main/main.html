@@ -7,10 +7,23 @@
       <div class="kod">Код за ЄДРПОУ: 01130549</div>
     </div>
     <div class="half">
-      <div class="right">
-        <input class="search" placeholder="Пошук за ЄДРПОУ та назвою"/>
-        <input type="date" />
+      <input id='profileButton' type="checkbox" checked data-on="Ready" data-off="Not Ready" data-onstyle="success"
+             data-offstyle="danger">
+      <div class='input-group date right' id='datetimepicker1'>
+        <input type='text' class="form-control"/>
+        <span class="input-group-addon">
+          <span class="glyphicon glyphicon-calendar"></span>
+        </span>
       </div>
+      <input class="right search" placeholder="Пошук за ЄДРПОУ та назвою"/>
     </div>
   </div>
 </div>
+<script type="text/javascript">
+  $(function () {
+    $('#datetimepicker1').datetimepicker({
+      format: 'YYYY-MM-DD'
+    });
+    $('#profileButton').bootstrapToggle();
+  });
+</script>

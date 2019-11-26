@@ -70,10 +70,31 @@ body {
   color: gray;
 }
 
+.date {
+  width: 128px;
+}
+
+.date * {
+  background-color: inherit;
+  border-color: #00b3ee;
+  color: #00b3ee;
+}
+
 .right {
   float: right;
+  margin: 8px;
+}
+
+.date input {
+  border-right: 0;
+  padding: 6px 1px 6px 12px;
+}
+
+.input-group-addon {
+  padding: 6px 12px 6px 8px;
 }
 
 .search {
+  height: 34px;
   width: 256px;
 }
