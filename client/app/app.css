@@ -87,7 +87,7 @@ body {
   width: 16px;
 }
 
-.toggle-text{
+.toggle-text {
   margin: 4px 0 0 32px;
 }
 
@@ -113,10 +113,33 @@ body {
   width: 256px;
 }
 
+.table-container {
+  border: 1px solid;
+  border-color: #ADADAD;
+  display: inline-block;
+  padding: 16px;
+  width: 100%;
+}
+
 .table {
   width: 100%;
 }
 
 .table td {
-  width:
+  border-bottom: 1px solid #ddd;
+  border-top: 0 !important;
+}
+
+.top-row td {
+  background-color: #f9f9f9;
+  border-bottom: 0;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.glyphicon-chevron-down, .glyphicon-chevron-up {
+  color: #ADADAD;
+  font-size: 10px;
 }

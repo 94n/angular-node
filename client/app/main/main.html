@@ -4,7 +4,7 @@
   <div class="content">
     <div class="half">
       <div class="link">< До результатів пошуку</div>
-      <div class="kod">Код за ЄДРПОУ: 01130549</div>
+      <div class="kod">Код за ЄДРПОУ: {{data.oCommonInfoBot.code}}</div>
     </div>
     <div class="half">
       <div class="right toggle-container">
@@ -19,20 +19,90 @@
           <span class="glyphicon glyphicon-calendar"></span>
         </span>
       </div>
-      <input class="right search" placeholder="Пошук за ЄДРПОУ та назвою"/>
+      <input class="right search" placeholder="  Пошук за ЄДРПОУ та назвою"/>
     </div>
-    <table class="table">
-      <colgroup>
-        <col style="width:30%">
-        <col style="width:35%">
-        <col style="width:35%">
-      </colgroup>
-      <tr>
-        <td></td>
-        <td>Відомості з ЄДР</td>
-        <td>Відомості з СВР</td>
-      </tr>
-    </table>
+    <div class="table-container">
+      <table class="table">
+        <colgroup>
+          <col style="width:16%">
+          <col style="width:42%">
+          <col style="width:42%">
+        </colgroup>
+        <tr class="top-row">
+          <td></td>
+          <td>Відомості з ЄДР</td>
+          <td>Відомості з СВР</td>
+        </tr>
+        <tr class="top-row">
+          <td>Назва</td>
+          <td class="bold">{{data.oCommonInfoBot.full_name}}</td>
+          <td class="bold">{{data.oCommonInfo.sNameFull}}</td>
+        </tr>
+        <tr class="top-row">
+          <td>Керівник юр.особи</td>
+          <td>{{data.oCommonInfoBot.ceo_name}}</td>
+          <td>{{data.oCommonInfo.oCEO.sCeoName}}</td>
+        </tr>
+        <tr>
+          <td>Статутний капітал&nbsp
+            <span class="glyphicon glyphicon-chevron-down" ng-if="!cap_expanded" ng-click="expandSelected(cap_expanded)"></span>
+            <span class="glyphicon glyphicon-chevron-up" ng-if="cap_expanded" ng-click="expandSelected(cap_expanded)"></span>
+          </td>
+          <td>{{data.oCommonInfoBot.totalcapital}}</td>
+          <td>{{data.oCommonInfo.nSizeCharterCapital}}</td>
+        </tr>
+        <tr ng-if="cap_expanded">
+          <td>Засновники</td>
+          <td>{{data.oCommonInfoBot.location}}</td>
+          <td>{{data.oCommonInfo.Address}}</td>
+        </tr>
+        <tr>
+          <td>Місцезнаходження</td>
+          <td>{{data.oCommonInfoBot.location}}</td>
+          <td>{{data.oCommonInfo.Address}}</td>
+        </tr>
+        <tr>
+          <td>Тимчасове місцезнаходження</td>
+          <td></td>
+          <td>{{data.oCommonInfo.Temporary_Address}}</td>
+        </tr>
+        <tr>
+          <td>Адреса електронної пошти</td>
+          <td></td>
+          <td>{{data.oCommonInfo.Email}}</td>
+        </tr>
+        <tr>
+          <td>Веб-сайт</td>
+          <td></td>
+          <td>{{data.oCommonInfo.www}}</td>
+        </tr>
+        <tr>
+          <td>Телефон</td>
+          <td></td>
+          <td>{{data.oCommonInfo.Phone}}</td>
+        </tr>
+        <tr>
+          <td>Дата державної реєстрації</td>
+          <td></td>
+          <td>{{parseDate(data.oCommonInfo.sDateRegistrationEDR) | date:'dd.MM.yyyy'}}</td>
+        </tr>
+        <tr>
+          <td>Статус юр.особи</td>
+          <td>{{data.oCommonInfoBot.status}}</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Основний КВЕД</td>
+          <td>{{data.oCommonInfoBot.activities}}</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Дата оновлення даних</td>
+          <td>{{parseDate(data.oCommonInfoBot.database_date) | date:'dd.MM.yyyy'}}</td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
   </div>
 </div>
 <script type="text/javascript">
