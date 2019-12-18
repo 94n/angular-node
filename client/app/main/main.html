@@ -51,10 +51,10 @@
           <td>{{data.oCommonInfoBot.totalcapital}}</td>
           <td>{{data.oCommonInfo.nSizeCharterCapital}}</td>
         </tr>
-        <tr ng-if="cap_expanded">
+        <tr ng-if="cap_expanded" ng-repeat="b in data.oCommonInfoBot.beneficiaries">
           <td>Засновники</td>
-          <td>{{data.oCommonInfoBot.location}}</td>
-          <td>{{data.oCommonInfo.Address}}</td>
+          <td>{{b.title}}</td>
+          <td>{{b.capital}}</td>
         </tr>
         <tr>
           <td>Місцезнаходження</td>
@@ -101,6 +101,54 @@
           <td>{{parseDate(data.oCommonInfoBot.database_date) | date:'dd.MM.yyyy'}}</td>
           <td></td>
         </tr>
+      </table>
+    </div>
+    <div class="table-container" ng-if="data.aListRegistry.length">
+      <div class="half pp" ng-class="{'pp-expanded': pp_expanded}">{{data.aListRegistry[0].sName}}</div>
+      <div class="half">
+        <span class="glyphicon glyphicon-chevron-down right" ng-if="!pp_expanded" ng-click="expandPp(pp_expanded)"></span>
+        <span class="glyphicon glyphicon-chevron-up right" ng-if="pp_expanded" ng-click="expandPp(pp_expanded)"></span>
+      </div>
+      <table class="table" ng-if="pp_expanded">
+        <colgroup>
+          <col style="width:32%">
+          <col style="width:20%">
+          <col style="width:20%">
+          <col style="width:8%">
+          <col style="width:16%">
+          <col style="width:4%">
+        </colgroup>
+        <thead class="bold top-row">
+        <tr>
+          <th>
+            Ім'я/назва особи, яка здійснює публічну пропозицію
+          </th>
+          <th>
+            Дата початку публічної пропозиції
+          </th>
+          <th>
+            Дата закінчення публічної пропозиції
+          </th>
+          <th>
+            Цінні папери
+          </th>
+          <th>
+            Сатус пропозиції
+          </th>
+          <th>
+          </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="p in pps">
+          <td>{{p.sNameOfferent.value}}</td>
+          <td>{{p.sDateBeginPublicOffering.value}}</td>
+          <td>{{p.sDateEndPublicOffering.value}}</td>
+          <td>{{p.sTypeStockPaper.value}}</td>
+          <td>{{p.aoListEvents.value.sName}}</td>
+          <td></td>
+        </tr>
+        </tbody>
       </table>
     </div>
   </div>
