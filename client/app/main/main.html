@@ -120,19 +120,19 @@
         </colgroup>
         <thead class="bold top-row">
         <tr>
-          <th>
+          <th ng-click="orderByField='sNameOfferent.value'; reverseSort = !reverseSort">
             Ім'я/назва особи, яка здійснює публічну пропозицію
           </th>
-          <th>
+          <th ng-click="orderByField='sDateBeginPublicOffering.value'; reverseSort = !reverseSort">
             Дата початку публічної пропозиції
           </th>
-          <th>
+          <th ng-click="orderByField='sDateEndPublicOffering.value'; reverseSort = !reverseSort">
             Дата закінчення публічної пропозиції
           </th>
-          <th>
+          <th ng-click="orderByField='sTypeStockPaper.value'; reverseSort = !reverseSort">
             Цінні папери
           </th>
-          <th>
+          <th ng-click="orderByField='aoListEvents.value'; reverseSort = !reverseSort">
             Сатус пропозиції
           </th>
           <th>
@@ -140,10 +140,10 @@
         </tr>
         </thead>
         <tbody>
-        <tr ng-repeat="p in pps">
+        <tr ng-repeat="p in pps|orderBy:orderByField:reverseSort">
           <td>{{p.sNameOfferent.value}}</td>
-          <td>{{p.sDateBeginPublicOffering.value}}</td>
-          <td>{{p.sDateEndPublicOffering.value}}</td>
+          <td>{{parseDate(p.sDateBeginPublicOffering.value) | date:'dd.MM.yyyy'}}</td>
+          <td>{{parseDate(p.sDateEndPublicOffering.value) | date:'dd.MM.yyyy'}}</td>
           <td>{{p.sTypeStockPaper.value}}</td>
           <td>{{p.aoListEvents.value.sName}}</td>
           <td></td>

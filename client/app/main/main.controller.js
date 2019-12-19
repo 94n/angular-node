@@ -6,6 +6,8 @@ angular.module('svrTestTaskApp')
       $scope.data = JSON.parse(response.data);
       $scope.cap_expanded = false;
       $scope.pp_expanded = false;
+      $scope.orderByField = 'sNameOfferent.value';
+      $scope.reverseSort = false;
       $scope.expandSelected = function (cap_expanded) {
         $scope.cap_expanded = !cap_expanded;
       };
@@ -18,7 +20,11 @@ angular.module('svrTestTaskApp')
         $scope.pp_expanded = !pp_expanded;
       };
       $scope.parseDate = function (date) {
-        return new Date(Date.parse(date));
+        if (date) {
+          return new Date(Date.parse(date));
+        } else {
+          return "";
+        }
       };
     });
   });
